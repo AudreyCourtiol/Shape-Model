@@ -2,20 +2,41 @@ package com.company;
 
 import org.junit.jupiter.api.Test;
 
+import java.awt.*;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CircleTest {
 
     @Test
-    void getCenter() {
+    byte getCenter() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
+
+        //check if the method returns the right point
+        assertEquals(new Point(1,1), getCenter());
+        return 0;
     }
 
     @Test
-    void getArea() {
+    byte getArea() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
+
+        assertEquals(3.14, getArea());
+        return 0;
     }
 
     @Test
-    void getCirconference() {
+    byte getCirconference() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
+
+        assertEquals(6.28, getCirconference());
+        return 0;
     }
 
     @Test

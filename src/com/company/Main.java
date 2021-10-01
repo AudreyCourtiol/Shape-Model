@@ -67,7 +67,6 @@ public class Main {
             case 3: //triangle
                 ArrayList<Point> cooTriangle = new ArrayList<Point>();
 
-
                 cooTriangle.add( new Point(1, 4));
                 cooTriangle.add( new Point(6, 4));
                 cooTriangle.add( new Point(6, 0));
