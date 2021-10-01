@@ -53,13 +53,34 @@ class TriangleTest {
 
     @Test
     void isPointInShape() {
+        ArrayList<Point> cooTriangle = new ArrayList<Point>();
+
+        cooTriangle.add( new Point(0, 4));
+        cooTriangle.add( new Point(6, 4));
+        cooTriangle.add( new Point(6, 0));
+        Triangle tri;
+        tri = new Triangle(cooTriangle);
     }
 
     @Test
     void display() {
+        ArrayList<Point> cooTriangle = new ArrayList<Point>();
+
+        cooTriangle.add( new Point(0, 4));
+        cooTriangle.add( new Point(6, 4));
+        cooTriangle.add( new Point(6, 0));
+        Triangle tri;
+        tri = new Triangle(cooTriangle);
     }
 
     @Test
     void moveShape() {
+        ArrayList<Point> cooTriangle = new ArrayList<Point>();
+
+        cooTriangle.add( new Point(0, 4));
+        cooTriangle.add( new Point(6, 4));
+        cooTriangle.add( new Point(6, 0));
+        Triangle tri;
+        tri = new Triangle(cooTriangle);
     }
 }

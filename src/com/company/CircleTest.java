@@ -41,13 +41,22 @@ class CircleTest {
 
     @Test
     void isPointInShape() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
     }
 
     @Test
     void display() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
     }
 
     @Test
     void moveShape() {
+        //create a circle
+        Point ce = new Point(1,1);
+        Circle c = new Circle(ce, 5);
     }
 }

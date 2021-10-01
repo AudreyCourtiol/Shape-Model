@@ -73,9 +73,25 @@ class RectangleTest {
 
     @Test
     void isPointInShape() {
+        //create a rectangle
+        ArrayList<Point> cooRectangle = new ArrayList<Point>();
+
+        cooRectangle.add( new Point(0, 4));
+        cooRectangle.add( new Point(6, 4));
+        cooRectangle.add( new Point(6, 0));
+        cooRectangle.add( new Point(0, 0));
+        Rectangle rec = new Rectangle(cooRectangle);
     }
 
     @Test
     void moveShape() {
+        //create a rectangle
+        ArrayList<Point> cooRectangle = new ArrayList<Point>();
+
+        cooRectangle.add( new Point(0, 4));
+        cooRectangle.add( new Point(6, 4));
+        cooRectangle.add( new Point(6, 0));
+        cooRectangle.add( new Point(0, 0));
+        Rectangle rec = new Rectangle(cooRectangle);
     }
 }
