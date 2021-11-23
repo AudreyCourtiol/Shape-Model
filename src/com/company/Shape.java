@@ -14,6 +14,7 @@ abstract class Shape {
     abstract void isPointInShape(Point p);
     abstract void moveShape();
 
+    //This method uses the centers of two shapes to determine the distance between them
     float getEuclideanDistanceFrom(Shape shape) {
         Point center1 = this.getCenter();
         Point center2 = shape.getCenter();
@@ -26,13 +27,15 @@ abstract class Shape {
 }
 
 class Rectangle extends Shape {
-    private ArrayList<Point> angles;
+    //Attributes of Rectangle
+    private final ArrayList<Point> angles;
     private float length, width;
 
-
+    //Creation of Rectangle
     public Rectangle(ArrayList<Point> angles) {
         this.angles = angles;
 
+        //We determine which way the length is positive
         if (angles.get(0).x - angles.get(1).x != 0) {
             if (angles.get(0).x > angles.get(1).x) {
                 this.length = angles.get(0).x - angles.get(1).x;
@@ -41,6 +44,7 @@ class Rectangle extends Shape {
             }
         }
 
+        //We determine which way the width is positive
         if (angles.get(0).y - angles.get(3).y != 0) {
             if (angles.get(0).y > angles.get(3).y) {
                 this.width = angles.get(0).y - angles.get(3).y;
@@ -48,7 +52,6 @@ class Rectangle extends Shape {
                 this.width = angles.get(3).y - angles.get(0).y;
             }
         }
-
     }
 
     //To display the informations of the rectangle
@@ -122,9 +125,11 @@ class Rectangle extends Shape {
 
 
 class Circle extends Shape{
-    private Point center;
-    private float radius;
+    //Attributes of circle
+    private final Point center;
+    private final float radius;
 
+    //Creation of circle
     public Circle(Point center, float radius){
         this.center = center;
         this.radius = radius;
@@ -182,18 +187,23 @@ class Circle extends Shape{
 
 
 class Triangle extends Shape{
-    private ArrayList<Point> angles;
-    private float side1, side2, side3;
+    //Attributes of Triangle
+    private final ArrayList<Point> angles;
+    private final float side1;
+    private final float side2;
+    private final float side3;
 
+    //Creation of Triangle
     public Triangle(ArrayList<Point> angles){
         this.angles = angles;
 
+        //Mathematics formulas to determine the length of each side of the triangle
         this.side1 = (float) Math.abs(Math.sqrt((angles.get(1).getX() - angles.get(0).getX()) * (angles.get(1).getX() - angles.get(0).getX()) + (angles.get(1).getY() - angles.get(0).getY()) * (angles.get(1).getY() - angles.get(0).getY())));
         this.side2 = (float) Math.abs(Math.sqrt((angles.get(2).getX() - angles.get(1).getX()) * (angles.get(2).getX() - angles.get(1).getX()) + (angles.get(2).getY() - angles.get(1).getY()) * (angles.get(2).getY() - angles.get(1).getY())));
         this.side3 = (float) Math.abs(Math.sqrt((angles.get(2).getX() - angles.get(0).getX()) * (angles.get(2).getX() - angles.get(0).getX()) + (angles.get(2).getY() - angles.get(0).getY()) * (angles.get(2).getY() - angles.get(0).getY())));
-
     }
 
+    //Returns the center of the triangle
     Point getCenter(){
         Point p =new Point();
 
@@ -205,6 +215,7 @@ class Triangle extends Shape{
         return p;
     }
 
+    //Calculates the area of the triangle and prints it out
     void getArea(){
         float area;
         float c = this.side1 + this.side2 + this.side3;
@@ -214,12 +225,14 @@ class Triangle extends Shape{
         System.out.println("The area of the triangle is " + area + ".\n\n");
     }
 
+    //Calculates the circonference of the triangle and prints it out
     void getCirconference(){
 
         float circon = this.side1 + this.side2 + this.side3;
         System.out.println("the circonference of the triangle is " + circon + ".\n\n");
     }
 
+    //This method checks whether the point given is inside the triangle or not
     void isPointInShape(Point p){
 
         double ABC = Math.abs (this.angles.get(0).getX() * (this.angles.get(1).getY() - this.angles.get(2).getY()) + this.angles.get(1).getX() * (this.angles.get(2).getY() - this.angles.get(0).getY()) + this.angles.get(2).getX() * (this.angles.get(0).getY() - this.angles.get(1).getY()));
@@ -229,13 +242,14 @@ class Triangle extends Shape{
 
         boolean isInTriangle = ABP + APC + PBC == ABC;
 
-        if(isInTriangle == true){
+        if(isInTriangle){
             System.out.println("The point given is inside the triangle.");
         }else{
             System.out.println("The point given is not inside the triangle.");
         }
     }
 
+    //This method displays the triangle
     @Override
     void display() {
         System.out.println("The three angles of this triangle are:\n");
